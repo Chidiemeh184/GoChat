@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,17 +18,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-a6-5mW">
+                                <rect key="frame" x="83" y="249" width="209" height="48"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="njI-mV-YyK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login Anonymously">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInAnonymouslyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PFX-zU-ktU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-Fd-9lH">
+                                <rect key="frame" x="160" y="364" width="55" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="google-plus"/>
+                                <connections>
+                                    <action selector="googleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lK8-WG-G31"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doh-59-on9">
+                                <rect key="frame" x="68" y="323" width="239" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Jl8-11-TBY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CCq-a6-5mW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="229" id="5Kh-Cq-qW2"/>
+                            <constraint firstItem="doh-59-on9" firstAttribute="top" secondItem="CCq-a6-5mW" secondAttribute="bottom" constant="26" id="Sgd-YE-GlH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CCq-a6-5mW" secondAttribute="trailing" constant="83" id="b2J-l1-z3N"/>
+                            <constraint firstItem="CCq-a6-5mW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="up1-6c-kSd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="doh-59-on9" secondAttribute="trailing" constant="52" id="yed-2l-NaM"/>
+                            <constraint firstItem="doh-59-on9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="yui-QF-MNO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="anonymousButton" destination="CCq-a6-5mW" id="fDB-bb-fPB"/>
+                        <outlet property="googleButton" destination="Kmg-Fd-9lH" id="8ig-BS-mCx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="7kD-ET-rGM">
             <objects>
-                <viewController id="JR1-wk-9cs" sceneMemberID="viewController">
+                <viewController id="JR1-wk-9cs" customClass="ChatViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EgK-I3-Sr6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,4 +85,7 @@
             <point key="canvasLocation" x="841" y="34"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="google-plus" width="96" height="96"/>
+    </resources>
 </document>
