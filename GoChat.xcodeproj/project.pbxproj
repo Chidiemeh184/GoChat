@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ABDDFEDEEF03160854340F59 /* Pods_GoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D6796222E5C6900EDD5329 /* Pods_GoChat.framework */; };
+		EF11F8B920AE7D1700DC4693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF11F8B820AE7D1700DC4693 /* GoogleService-Info.plist */; };
 		EFBED48A20AD0B090023799F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED48920AD0B090023799F /* AppDelegate.swift */; };
 		EFBED48C20AD0B090023799F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED48B20AD0B090023799F /* ViewController.swift */; };
 		EFBED48F20AD0B090023799F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBED48D20AD0B090023799F /* Main.storyboard */; };
@@ -15,12 +16,12 @@
 		EFBED49420AD0B0B0023799F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBED49220AD0B0B0023799F /* LaunchScreen.storyboard */; };
 		EFBED49C20AD0B9A0023799F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED49B20AD0B9A0023799F /* LogInViewController.swift */; };
 		EFBED49F20AD0D020023799F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED49E20AD0D020023799F /* ChatViewController.swift */; };
-		EFBED4A320AD183B0023799F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBED4A220AD183B0023799F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B881A37CE0E8DB701F4F5F1 /* Pods-GoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoChat/Pods-GoChat.release.xcconfig"; sourceTree = "<group>"; };
 		96D6796222E5C6900EDD5329 /* Pods_GoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF11F8B820AE7D1700DC4693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFBED48620AD0B090023799F /* GoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBED48920AD0B090023799F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFBED48B20AD0B090023799F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		EFBED49520AD0B0B0023799F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFBED49B20AD0B9A0023799F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		EFBED49E20AD0D020023799F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		EFBED4A220AD183B0023799F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F478B0C3E7259658A5994665 /* Pods-GoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoChat/Pods-GoChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 				EFBED49020AD0B0B0023799F /* Assets.xcassets */,
 				EFBED49220AD0B0B0023799F /* LaunchScreen.storyboard */,
 				EFBED49520AD0B0B0023799F /* Info.plist */,
-				EFBED4A220AD183B0023799F /* GoogleService-Info.plist */,
+				EF11F8B820AE7D1700DC4693 /* GoogleService-Info.plist */,
 			);
 			path = GoChat;
 			sourceTree = "<group>";
@@ -167,8 +167,8 @@
 			files = (
 				EFBED49420AD0B0B0023799F /* LaunchScreen.storyboard in Resources */,
 				EFBED49120AD0B0B0023799F /* Assets.xcassets in Resources */,
-				EFBED4A320AD183B0023799F /* GoogleService-Info.plist in Resources */,
 				EFBED48F20AD0B090023799F /* Main.storyboard in Resources */,
+				EF11F8B920AE7D1700DC4693 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +373,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V82X98L5Q;
 				INFOPLIST_FILE = GoChat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.chidiemeh184.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -389,7 +392,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8V82X98L5Q;
 				INFOPLIST_FILE = GoChat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.chidiemeh184.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
