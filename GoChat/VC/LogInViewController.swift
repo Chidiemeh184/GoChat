@@ -8,8 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate{
 
     
     @IBOutlet weak var anonymousButton: UIButton!
@@ -19,34 +20,25 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         anonymousButton.layer.borderWidth = 2.0
         anonymousButton.layer.borderColor = UIColor.black.cgColor
+        GIDSignIn.sharedInstance().clientID = "391760886408-g6eb552f3qc6o5vu130r37h1e0bru5kj.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
     }
 
 
     
     @IBAction func logInAnonymouslyTapped(_ sender: Any) {
-        
-        Auth.auth().signInAnonymously() { (user, error) in
-            if error == nil {
-                print("USER : \(user)")
-            }else{
-                print(error)
-            }
-        }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = navVC
+        Helper.helper.anonymousUserLoggedIn()
     }
     
-
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        Helper.helper.logInwithGoogle(authentication: user.authentication)
+    }
 
     
     @IBAction func googleButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = navVC
+        GIDSignIn.sharedInstance().signIn()
     }
     
 }

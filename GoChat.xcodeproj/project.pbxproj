@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABDDFEDEEF03160854340F59 /* Pods_GoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D6796222E5C6900EDD5329 /* Pods_GoChat.framework */; };
 		EF11F8B920AE7D1700DC4693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF11F8B820AE7D1700DC4693 /* GoogleService-Info.plist */; };
+		EF11F8BB20AE7F4200DC4693 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF11F8BA20AE7F4200DC4693 /* Helper.swift */; };
 		EFBED48A20AD0B090023799F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED48920AD0B090023799F /* AppDelegate.swift */; };
 		EFBED48C20AD0B090023799F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBED48B20AD0B090023799F /* ViewController.swift */; };
 		EFBED48F20AD0B090023799F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBED48D20AD0B090023799F /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		1B881A37CE0E8DB701F4F5F1 /* Pods-GoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoChat/Pods-GoChat.release.xcconfig"; sourceTree = "<group>"; };
 		96D6796222E5C6900EDD5329 /* Pods_GoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF11F8B820AE7D1700DC4693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF11F8BA20AE7F4200DC4693 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		EFBED48620AD0B090023799F /* GoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBED48920AD0B090023799F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFBED48B20AD0B090023799F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				EFBED49B20AD0B9A0023799F /* LogInViewController.swift */,
 				EFBED49E20AD0D020023799F /* ChatViewController.swift */,
+				EF11F8BA20AE7F4200DC4693 /* Helper.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 				EFBED48320AD0B090023799F /* Frameworks */,
 				EFBED48420AD0B090023799F /* Resources */,
 				47F948143318E2274AF924C5 /* [CP] Embed Pods Frameworks */,
+				CA28535468958F1F4CB2FEF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,12 +204,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -213,6 +219,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA28535468958F1F4CB2FEF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -224,6 +248,7 @@
 			files = (
 				EFBED48C20AD0B090023799F /* ViewController.swift in Sources */,
 				EFBED48A20AD0B090023799F /* AppDelegate.swift in Sources */,
+				EF11F8BB20AE7F4200DC4693 /* Helper.swift in Sources */,
 				EFBED49F20AD0D020023799F /* ChatViewController.swift in Sources */,
 				EFBED49C20AD0B9A0023799F /* LogInViewController.swift in Sources */,
 			);
