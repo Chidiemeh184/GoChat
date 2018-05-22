@@ -33,6 +33,11 @@ class LogInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print(error!.localizedDescription)
+            return
+        }
+        print(user.authentication)
         Helper.helper.logInwithGoogle(authentication: user.authentication)
     }
 
