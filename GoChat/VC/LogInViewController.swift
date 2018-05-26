@@ -20,7 +20,7 @@ class LogInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         super.viewDidLoad()
         anonymousButton.layer.borderWidth = 2.0
         anonymousButton.layer.borderColor = UIColor.black.cgColor
-        GIDSignIn.sharedInstance().clientID = "391760886408-g6eb552f3qc6o5vu130r37h1e0bru5kj.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = ""
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
